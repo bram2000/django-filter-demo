@@ -67,4 +67,5 @@ The project demonstrates:
 
 - Django
 - django-filter
+- djangorestframework
 - Poetry (for dependency management) 
