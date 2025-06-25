@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ book.title }}</title>
+</head>
+<body>
+    <h1>{{ book.title }}</h1>
+    <p>Author: <a href="{% url 'books:author_detail' book.author.pk %}">{{ book.author.name }}</a></p>
+    
+    {% if book.isbn %}
+        <p>ISBN: {{ book.isbn }}</p>
+    {% endif %}
+    {% if book.publication_date %}
+        <p>Publication Date: {{ book.publication_date }}</p>
+    {% endif %}
+    {% if book.price %}
+        <p>Price: ${{ book.price }}</p>
+    {% endif %}
+    {% if book.genre %}
+        <p>Genre: {{ book.genre }}</p>
+    {% endif %}
+    
+    <p><a href="{% url 'books:book_list' %}">Back to Books</a></p>
+</body>
+</html> 

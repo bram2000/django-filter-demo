@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Books</title>
+</head>
+<body>
+    <h1>Books</h1>
+    <ul>
+    {% for book in books %}
+        <li><a href="{% url 'books:book_detail' book.pk %}">{{ book.title }}</a> by {{ book.author.name }}</li>
+    {% empty %}
+        <li>No books found.</li>
+    {% endfor %}
+    </ul>
+    <p><a href="{% url 'books:author_list' %}">View Authors</a></p>
+</body>
+</html> 
