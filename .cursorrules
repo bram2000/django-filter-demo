@@ -1,0 +1,10 @@
+# Cursor Rules for django-filter-demo
+
+## Dependency Management
+- This project uses Poetry for dependency management
+- Use `poetry add <package>` to add new dependencies
+- Use `poetry install` to install dependencies
+- Use `poetry run python manage.py` for Django commands
+
+## Shell Commands
+- All shell commands should be run via bash 
