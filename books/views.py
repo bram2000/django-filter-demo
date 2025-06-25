@@ -3,9 +3,11 @@ from rest_framework import viewsets
 from rest_framework.decorators import action
 from rest_framework.response import Response
 from rest_framework.filters import SearchFilter, OrderingFilter
+from django_filters.rest_framework import DjangoFilterBackend
 
 from .models import Author, Book
 from .serializers import BookSerializer, AuthorSerializer, BookListSerializer
+from .filters import BookFilter
 
 
 class AuthorListView(ListView):
@@ -44,7 +46,8 @@ class AuthorViewSet(viewsets.ModelViewSet):
 
 class BookViewSet(viewsets.ModelViewSet):
     queryset = Book.objects.all()
-    filter_backends = [SearchFilter, OrderingFilter]
+    filter_backends = [DjangoFilterBackend, SearchFilter, OrderingFilter]
+    filterset_class = BookFilter
     search_fields = ['title', 'isbn']
     ordering_fields = ['title', 'publication_date', 'price']
     ordering = ['title']
