@@ -7,4 +7,9 @@
 - Use `poetry run python manage.py` for Django commands
 
 ## Shell Commands
-- All shell commands should be run via bash 
+- All shell commands should be run via bash
+
+## Code Changes
+- Only make necessary changes to implement requested features
+- Do NOT modify existing functionality, URLs, views, or other features unless explicitly requested
+- Preserve existing code structure and patterns unless specifically asked to change them 
